@@ -7,7 +7,6 @@
       <itemPath>Import.h</itemPath>
       <itemPath>Point_1.h</itemPath>
       <itemPath>Point_2.h</itemPath>
-      <itemPath>Point_3.h</itemPath>
       <itemPath>Sort.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -20,7 +19,6 @@
       <itemPath>Import.cpp</itemPath>
       <itemPath>Point_1.cpp</itemPath>
       <itemPath>Point_2.cpp</itemPath>
-      <itemPath>Point_3.cpp</itemPath>
       <itemPath>Sort.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -57,10 +55,6 @@
       <item path="Point_2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Point_2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Point_3.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Point_3.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Sort.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -100,10 +94,6 @@
       <item path="Point_2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Point_2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Point_3.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Point_3.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Sort.cpp" ex="false" tool="1" flavor2="0">
       </item>

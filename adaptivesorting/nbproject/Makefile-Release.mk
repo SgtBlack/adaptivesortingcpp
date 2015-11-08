@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Import.o \
 	${OBJECTDIR}/Point_1.o \
 	${OBJECTDIR}/Point_2.o \
-	${OBJECTDIR}/Point_3.o \
 	${OBJECTDIR}/Sort.o \
 	${OBJECTDIR}/main.o
 
@@ -81,11 +80,6 @@ ${OBJECTDIR}/Point_2.o: Point_2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Point_2.o Point_2.cpp
-
-${OBJECTDIR}/Point_3.o: Point_3.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Point_3.o Point_3.cpp
 
 ${OBJECTDIR}/Sort.o: Sort.cpp 
 	${MKDIR} -p ${OBJECTDIR}

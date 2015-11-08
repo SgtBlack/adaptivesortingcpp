@@ -8,6 +8,8 @@
 #ifndef IMPORT_H
 #define	IMPORT_H
 
+#include "Point_2.h"
+
 class Import {
 public:
     Import();

@@ -9,7 +9,7 @@
 
 Point_2::Point_2(double x, double y) : Point_1::Point_1(x), ycoord(y) {}
 
-Point_2::~Point_2() {}
+Point_2::~Point_2(){}
 
 double Point_2::y() const {
     return ycoord;

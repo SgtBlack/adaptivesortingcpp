@@ -8,7 +8,6 @@
 #include <iostream>
 #include <vector>
 
-#include "Point_1.h"
 #include "Point_2.h"
 #include "Import.h"
 

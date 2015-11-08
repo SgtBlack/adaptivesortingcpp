@@ -7,7 +7,9 @@
 
 #include "Point_1.h"
 
-Point_1::Point_1(double x) : xcoord(x) {}
+Point_1::Point_1(double x) {
+    xcoord = x;
+}
 
 Point_1::~Point_1() {}
 
@@ -16,8 +18,6 @@ double Point_1::x() const {
 }
 
 double Point_1::y() const { return 0; };
-
-double Point_1::z() const { return 0; };
 
 int Point_1::dimension() const {
     return 1;

@@ -15,14 +15,10 @@ public:
     
     virtual double x() const;
     virtual double y() const;
-    virtual double z() const;
     virtual int    dimension() const;
-    
-//private:
     
 protected:
     double xcoord;
-
 };
 
 #endif	/* POINT_1_H */

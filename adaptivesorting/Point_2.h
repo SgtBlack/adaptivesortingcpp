@@ -18,9 +18,6 @@ public:
     virtual double  y() const;
     virtual int     dimension() const;
     
-    
-//private:
-    
 protected:
     double  ycoord;
 };
