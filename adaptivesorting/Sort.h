@@ -25,7 +25,6 @@ public:
     template<class InputIterator, class OutputIterator>
     OutputIterator copy (InputIterator first, InputIterator last, OutputIterator result);
 
-    
     template <class InputIterator, class OutputIterator, class Less>
     OutputIterator sort(InputIterator first, InputIterator beyond, OutputIterator result, Less less );
     

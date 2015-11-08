@@ -22,9 +22,9 @@ int main(int argc, char** argv) {
     
     vector<Point_2> data = import.getData();
     
-//    for(int i = 0; i < import.getAnzExamples(); i++){
-//        cout << data.at(i).x() << "/" << data.at(i).y() << endl;
-//    }
+    for(int i = 0; i < import.getAnzExamples(); i++){
+        cout << data.at(i).x() << "/" << data.at(i).y() << endl;
+    }
     
     
     
