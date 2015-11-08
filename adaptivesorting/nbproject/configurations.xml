@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Import.h</itemPath>
+      <itemPath>Point_1.h</itemPath>
+      <itemPath>Point_2.h</itemPath>
+      <itemPath>Sort.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +16,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Import.cpp</itemPath>
+      <itemPath>Point_1.cpp</itemPath>
+      <itemPath>Point_2.cpp</itemPath>
+      <itemPath>Sort.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -36,6 +44,22 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Import.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Import.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point_1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point_1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point_2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point_2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +83,22 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Import.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Import.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point_1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point_1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point_2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point_2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
