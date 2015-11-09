@@ -4,30 +4,75 @@
  * 
  */
 
-#include <cstdlib>
+
 #include <iostream>
 #include <vector>
+#include <iterator>
+#include <unistd.h>
+#include <algorithm>
 
 #include "Point_2.h"
+#include "Sort.h"
 #include "Import.h"
 
-using namespace std;
+
+//using namespace std;
+
+struct myLess
+{
+    bool operator()( const Point_2& p, const Point_2& q){
+        if ( p.x() < q.x() ){
+            return true;
+        } else {
+            if ( ( p.x() == q.x() ) && ( p.y() < q.y() ) ){
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+bool fileExists(const std::string& name) {
+    return ( access( name.c_str(), F_OK ) != -1 );
+}
 
 int main(int argc, char** argv) {
     
-    Import import = Import(2, "data/artificialPolygons/H.txt");
+    myLess myLessFct;
     
-    cout << import.getAnzExamples() << endl;
+    if(!fileExists("data/artificialPolygons/H.txt")){
+        std::cout << "File does not exist" << std::endl;
+    } else {
     
-    vector<Point_2> data = import.getData();
-    
-    for(int i = 0; i < import.getAnzExamples(); i++){
-        cout << data.at(i).x() << "/" << data.at(i).y() << endl;
+        Import import = Import(2, "data/artificialPolygons/H.txt");
+        
+        std::cout << import.getAnzExamples() << std::endl;
+        
+        std::vector<Point_2> data = import.getData();
+        
+        for(int i = 0; i < import.getAnzExamples(); i++){
+            std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
+        }
+        
+        Sort sort;
+        
+        std::vector<Point_2> result;
+
+        //sort.greedySort(data.begin(), data.end(), result.begin(), myLessFct);
+        sort.greedySort(data.begin(), data.end(), myLessFct);
+        
+        //std::sort(data.begin(), data.end(), myLessFct);
+        std::cout << "sorted: " << std::endl;
+        for(int i = 0; i < import.getAnzExamples(); i++){
+            std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
+        }
     }
-    
-    
-    
-    
     return EXIT_SUCCESS;
 }
+
+
+
+
+
+
 

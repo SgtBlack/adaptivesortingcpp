@@ -40,15 +40,16 @@ int Import::getAnzExamples(){
 void Import::importData(string filepath){
     
     ifstream infile;
-    infile.open(filepath); 
+    infile.open(filepath);
     
     string line;
     
-    getline(infile, line);
+    //getline(infile, line);
+
+    infile >> anzExamples;
+    //anzExamples = stoi( line );
     
-    anzExamples = stoi( line );
-    
-    for( int i = 0; i < anzExamples + 1; i++ )
+    for( int i = 0; i < anzExamples; i++ )
     {
         double coordinates[dimensions];
 
