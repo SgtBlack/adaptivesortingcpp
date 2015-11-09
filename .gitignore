@@ -28,3 +28,16 @@
 *.app
 /adaptivesorting/build/
 /adaptivesorting/dist/
+*.pbxproj
+
+*.xcworkspacedata
+
+*.xccheckout
+
+*.xcuserstate
+
+*.xcbkptlist
+
+*.xcscheme
+
+*.plist
