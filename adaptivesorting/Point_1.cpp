@@ -1,8 +1,7 @@
 /* 
  * File:   Point_1.cpp
- * Author: Fabian
- * 
- * Created on 8. November 2015, 13:01
+ * Author: Fabian Witt
+ *
  */
 #include <iostream>
 #include "Point_1.h"

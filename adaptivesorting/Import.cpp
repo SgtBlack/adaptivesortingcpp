@@ -1,8 +1,7 @@
 /* 
  * File:   Import.cpp
- * Author: Fabian
- * 
- * Created on 8. November 2015, 13:49
+ * Author: Fabian Witt
+ *
  */
 #include <fstream>
 #include <vector>

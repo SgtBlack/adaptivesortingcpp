@@ -1,8 +1,7 @@
 /* 
  * File:   Sort.h
- * Author: Fabian
+ * Author: Fabian Witt
  *
- * Created on 8. November 2015, 13:42
  */
 
 #ifndef SORT_H

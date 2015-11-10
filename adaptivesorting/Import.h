@@ -1,8 +1,7 @@
 /* 
  * File:   Import.h
- * Author: Fabian
+ * Author: Fabian Witt
  *
- * Created on 8. November 2015, 13:49
  */
 
 #ifndef IMPORT_H

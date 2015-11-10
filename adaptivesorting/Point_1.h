@@ -1,8 +1,7 @@
 /* 
  * File:   Point_1.h
- * Author: Fabian
+ * Author: Fabian Witt
  *
- * Created on 8. November 2015, 13:01
  */
 
 #ifndef POINT_1_H
