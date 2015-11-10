@@ -17,6 +17,8 @@ public:
     virtual double y() const;
     virtual int    dimension() const;
     
+    friend std::ostream& operator<<(std::ostream& s, const Point_1& p);
+    
 protected:
     double xcoord;
 };
