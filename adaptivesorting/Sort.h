@@ -54,9 +54,9 @@ public:
     }
 
     template <class InputIterator, class OutputIterator, class Less>
-    OutputIterator greedySort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
+    OutputIterator quickSort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
         
-        greedySort(first, beyond, less);
+        quickSort(first, beyond, less);
         
         return copy(first, beyond, result);
     }
@@ -64,8 +64,50 @@ public:
     
     
     template <class RandomAccessIterator, class Less>
-    void greedySort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
-
+    void quickSort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
+        
+        int leftBorder = 1, rightBorder = size(first, beyond);
+        
+        int leftBorderTmp = 1, rightBorderTmp = size(first, beyond);
+        
+        std::vector<Point_2>::iterator leftBorderIter = first;
+        std::vector<Point_2>::iterator rightBorderIter = beyond - 1;
+        
+        //select elemet in the middle
+        int i = 1; Point_2 pivot;
+        std::vector<Point_2>::iterator iter = first;
+        while(i <= (size(first, beyond) / 2)){
+            if(i == (size(first, beyond) / 2))
+                pivot = *iter;
+            iter++; i++;
+        }
+        
+        while( leftBorderTmp <= rightBorderTmp ){
+            
+            while( less( *leftBorderIter, pivot ) ){
+                leftBorderTmp++;
+                leftBorderIter++;
+            }
+            
+            while( less( pivot, *rightBorderIter ) ){
+                rightBorderTmp--;
+                rightBorderIter--;
+            }
+            
+            if( leftBorderTmp <= rightBorderTmp ){
+                iter_swap(leftBorderIter, rightBorderIter);
+                leftBorderTmp++; leftBorderIter++;
+                
+                rightBorderTmp--; rightBorderIter--;
+            }
+            
+        }
+        
+        if( leftBorder < rightBorderTmp )
+            quickSort(first, rightBorderIter+1, less );
+        
+        if( leftBorderTmp < rightBorder )
+            quickSort(leftBorderIter, beyond, less );
     }
     
     template <class InputIterator, class OutputIterator, class Less>

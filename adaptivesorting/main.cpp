@@ -59,8 +59,8 @@ int main(int argc, char** argv) {
         
         Sort sort;
         
-        std::cout << "sorted greedySort: " << std::endl;
-        out_it = sort.greedySort(data.begin(), data.end(), out_it, myLessFct);
+        std::cout << "sorted quickSort: " << std::endl;
+        out_it = sort.quickSort(data.begin(), data.end(), out_it, myLessFct);
         
         //std::cout << "sorted bubbleSort: " << std::endl;
         //out_it = sort.bubbleSort(data.begin(), data.end(), out_it, myLessFct);
