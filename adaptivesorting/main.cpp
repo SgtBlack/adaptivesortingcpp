@@ -39,8 +39,13 @@ bool fileExists(const std::string& name) {
 
 
 int main(int argc, char** argv) {
+    
+    //std::string filePath = "data/artificialPolygons/Q.txt";
+    //std::string filePath = "data/randomPolygons/random2opt_2048_9";
+    std::string filePath = "data/randomOrthogonalPolygons/orthogonal_2048_8";
+    //std::string filePath = "data/realWorldPolygons/Koeln__304__5";
 
-    if(!fileExists("data/artificialPolygons/H.txt")){
+    if(!fileExists(filePath)){
         std::cout << "File does not exist" << std::endl;
     } else {
         
@@ -48,16 +53,15 @@ int main(int argc, char** argv) {
         
         std::ostream_iterator<Point_2> out_it (std::cout);
     
-        Import import = Import(2, "data/artificialPolygons/H.txt");
+        Import import = Import(2, filePath);
         
-        std::cout << import.getAnzExamples() << std::endl;
+        //std::cout << import.getAnzExamples() << std::endl;
         
         std::vector<Point_2> data = import.getData();
         
-        for(int i = 0; i < import.getAnzExamples(); i++){
-            std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
-        }
-        
+        //for(int i = 0; i < import.getAnzExamples(); i++){
+        //  std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
+        //}
         AdaptiveSort aSort;
         
         std::cout << "sorted insertionSort: " << std::endl;
