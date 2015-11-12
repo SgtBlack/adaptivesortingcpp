@@ -64,8 +64,11 @@ int main(int argc, char** argv) {
         //}
         AdaptiveSort aSort;
         
-        std::cout << "sorted insertionSort: " << std::endl;
-        out_it = aSort.insertionSort(data.begin(), data.end(), out_it, myLessFct);
+        //std::cout << "sorted insertionSort: " << std::endl;
+        //out_it = aSort.insertionSort(data.begin(), data.end(), out_it, myLessFct);
+        
+        std::cout << "sorted straightInsertionSort: " << std::endl;
+        out_it = aSort.straightInsertionSort(data.begin(), data.end(), out_it, myLessFct);
         
         //std::cout << "sorted quickSort: " << std::endl;
         //out_it = sort.quickSort(data.begin(), data.end(), out_it, myLessFct);

@@ -18,17 +18,10 @@ public:
     AdaptiveSort(){}
     virtual ~AdaptiveSort(){}
     
-    template <class T>
-    void swap( T& a, T& b ){
-        
-        T temp(a); a = b; b = temp;
-    }
-    
     template <class RandomAccessIterator, class Less>
     void insertionSort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
         
-        std::vector<Point_2>::iterator iter;
-        for(iter = first; iter != beyond; ++iter) {
+        for(auto iter = first; iter != beyond; ++iter){
             rotate(upperBound(first, iter, *iter, less), iter, iter + 1);
         }
     }
@@ -40,8 +33,37 @@ public:
         
         return copy(first, beyond, result);
     }
+    
+    template <class RandomAccessIterator, class Less>
+    void straightInsertionSort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
+        
+        RandomAccessIterator target;
+        RandomAccessIterator insertPos;
+        
+        for(auto iter = first; iter != beyond; ++iter){
+            
+            for(auto iter2 = iter; iter2 != first && less(*iter2, *(iter2-1)); iter2--){
+                iter_swap(iter2, iter2-1);
+            }
+        }
+        
+    }
+    
+    template <class InputIterator, class OutputIterator, class Less>
+    OutputIterator straightInsertionSort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
+        
+        straightInsertionSort(first, beyond, less);
+        
+        return copy(first, beyond, result);
+    }
 
 private:
+    template <class T>
+    void swap( T& a, T& b ){
+        
+        T temp(a); a = b; b = temp;
+    }
+    
     template <class ForwardIterator1, class ForwardIterator2>
     void iter_swap( ForwardIterator1 a, ForwardIterator2 b ){
         
