@@ -37,16 +37,12 @@ public:
     template <class RandomAccessIterator, class Less>
     void straightInsertionSort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
         
-        RandomAccessIterator target;
-        RandomAccessIterator insertPos;
-        
         for(auto iter = first; iter != beyond; ++iter){
             
             for(auto iter2 = iter; iter2 != first && less(*iter2, *(iter2-1)); iter2--){
                 iter_swap(iter2, iter2-1);
             }
         }
-        
     }
     
     template <class InputIterator, class OutputIterator, class Less>
