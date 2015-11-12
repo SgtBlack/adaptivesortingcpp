@@ -50,58 +50,7 @@ public:
             size++;
         }
         return size;
-    }
-    
-    //Rotates the order of the elements in the range [first,beyond),
-    //in such a way that the element pointed by middle becomes the new first element.
-    template <class ForwardIterator>
-    void rotate(ForwardIterator first, ForwardIterator middle, ForwardIterator beyond)
-    {
-        ForwardIterator next = middle;
-        while (first != next)
-        {
-            swap(*first++, *next++);
-            if(next == beyond){
-                next = middle;
-            } else if (first == middle){
-                middle = next;
-            }
-        }
-    }
-    
-    // Returns an iterator pointing to the first element in the range [first,beyond) which compares greater than val.
-    template <class ForwardIterator, class T, class Less>
-    ForwardIterator upperBound(ForwardIterator first, ForwardIterator beyond, const T& val, Less less)
-    {
-        ForwardIterator it;
-        typename std::iterator_traits<ForwardIterator>::difference_type count, step;
-        count = std::distance(first, beyond);
-        while (count > 0)
-        {
-            it = first;
-            step = count / 2;
-            std::advance(it, step);
-            
-            if( !less(val, *it) ){
-                first = ++it;
-                count -= step + 1;
-            }
-            else count = step;
-        }
-        return first;
-    }
-    
-    template <class InputIterator, class OutputIterator, class Less>
-    OutputIterator insertionSort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
-        
-        std::vector<Point_2>::iterator iter;
-        for(iter = first; iter != beyond; ++iter) {
-            rotate(upperBound(first, iter, *iter, less), iter, iter + 1);
-        }
-        
-        return copy(first, beyond, result);
-    }
-    
+    }    
 
     template <class InputIterator, class OutputIterator, class Less>
     OutputIterator quickSort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){

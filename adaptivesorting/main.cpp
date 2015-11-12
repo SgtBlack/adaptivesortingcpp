@@ -13,6 +13,7 @@
 
 #include "Point_2.h"
 #include "Sort.h"
+#include "adaptiveSort.h"
 #include "Import.h"
 
 
@@ -57,10 +58,10 @@ int main(int argc, char** argv) {
             std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
         }
         
-        Sort sort;
+        AdaptiveSort aSort;
         
         std::cout << "sorted insertionSort: " << std::endl;
-        out_it = sort.insertionSort(data.begin(), data.end(), out_it, myLessFct);
+        out_it = aSort.insertionSort(data.begin(), data.end(), out_it, myLessFct);
         
         //std::cout << "sorted quickSort: " << std::endl;
         //out_it = sort.quickSort(data.begin(), data.end(), out_it, myLessFct);
