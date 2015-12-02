@@ -12,8 +12,7 @@
 #include <algorithm>
 
 #include "Point_2.h"
-#include "Sort.h"
-#include "adaptiveSort.h"
+#include "sorting.h"
 #include "Import.h"
 
 
@@ -59,22 +58,9 @@ int main(int argc, char** argv) {
         
         std::vector<Point_2> data = import.getData();
         
-        //for(int i = 0; i < import.getAnzExamples(); i++){
-        //  std::cout << data.at(i).x() << "/" << data.at(i).y() << std::endl;
-        //}
-        AdaptiveSort aSort;
-        
-        //std::cout << "sorted insertionSort: " << std::endl;
-        //out_it = aSort.insertionSort(data.begin(), data.end(), out_it, myLessFct);
-        
         std::cout << "sorted straightInsertionSort: " << std::endl;
-        out_it = aSort.straightInsertionSort(data.begin(), data.end(), out_it, myLessFct);
-        
-        //std::cout << "sorted quickSort: " << std::endl;
-        //out_it = sort.quickSort(data.begin(), data.end(), out_it, myLessFct);
-        
-        //std::cout << "sorted bubbleSort: " << std::endl;
-        //out_it = sort.bubbleSort(data.begin(), data.end(), out_it, myLessFct);
+
+        out_it = AE209013::sort(data.begin(), data.end(), out_it, myLessFct);
     }
     return EXIT_SUCCESS;
 }
