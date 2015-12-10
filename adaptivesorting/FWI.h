@@ -1,13 +1,23 @@
+// ======================================================================
 //
-//  FWI.h
+// Copyright (c) 2015 OVGU Magdeburg
+//
+// This software and related files are part of an Algorithm Engineering
+// implementation project on adaptive sorting of polygon vertices,
+// conducted at computer science department (FIN) at OVGU Magdeburg,
+// Germany. All rights reserved.
+//
+// ======================================================================
+//
 //  adaptivesorting
 //
 //  Created by Fabian Witt on 17.11.15.
 //  Copyright (c) 2015 Fabian Witt. All rights reserved.
 //
+// ======================================================================
 
-#ifndef FWI_h
-#define FWI_h
+#ifndef FWI_H
+#define FWI_H
 
 namespace FWI {
     
