@@ -12,7 +12,7 @@
 #include <algorithm>
 
 #include "Point_2.h"
-#include "sorting.h"
+#include "FWI.h"
 #include "Import.h"
 
 
@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
         
         std::cout << "sorted straightInsertionSort: " << std::endl;
 
-        out_it = AE209013::sort(data.begin(), data.end(), out_it, myLessFct);
+        out_it = FWI::sort(data.begin(), data.end(), out_it, myLessFct);
     }
     return EXIT_SUCCESS;
 }

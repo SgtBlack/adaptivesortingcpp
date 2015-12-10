@@ -1,20 +1,19 @@
 //
-//  sorting.h
+//  FWI.h
 //  adaptivesorting
 //
-//  Created by Fabian Witt on 17.11.15 | KW 47.
+//  Created by Fabian Witt on 17.11.15.
 //  Copyright (c) 2015 Fabian Witt. All rights reserved.
 //
 
-#ifndef adaptivesorting_sorting_h
-#define adaptivesorting_sorting_h
+#ifndef FWI_h
+#define FWI_h
 
-namespace AE209013 {
+namespace FWI {
     
     //swap the content of a and b
     template <class T>
     void swap( T& a, T& b ){
-        
         T temp(a); a = b; b = temp;
     }
     
@@ -54,7 +53,7 @@ namespace AE209013 {
         for(auto iter = first; iter != beyond; ++iter){
             
             for(auto iter2 = iter; iter2 != first && less(*iter2, *(iter2-1)); iter2--){
-                AE209013::swap(*(iter2), *(iter2-1));
+                FWI::swap(*(iter2), *(iter2-1));
             }
         }
     }
@@ -81,5 +80,4 @@ namespace AE209013 {
     }
 }
 
-#endif
-
+#endif // FWI_H
