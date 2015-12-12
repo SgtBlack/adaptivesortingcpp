@@ -27,35 +27,6 @@ namespace FWI {
         T temp(a); a = b; b = temp;
     }
     
-    // sort the content from first until beyond with the provided less function
-    template <class RandomAccessIterator, class Less>
-    void sort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
-        
-        if( !std::is_sorted(first, beyond) ){
-            
-            if( beyond - first > 50){
-                mergeSort(first, beyond, less);
-            } else {
-                insertionSort(first, beyond, less);
-            }
-        }
-    }
-    
-    // call the sorting function and return the result as an OutputIterator
-    template <class InputIterator, class OutputIterator, class Less>
-    OutputIterator sort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
-        
-        typedef typename std::iterator_traits<InputIterator>::value_type ValueType;
-        
-        std::vector<ValueType> V;
-
-        std::copy(first,beyond,std::back_inserter(V));
-        
-        sort(V.begin(), V.end(), less);
-        
-        return std::copy(V.begin(), V.end(), result);
-    }
-    
     // insertion sort algorithm
     template <class RandomAccessIterator, class Less>
     void insertionSort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
@@ -75,18 +46,47 @@ namespace FWI {
         if (beyond - first > 1){
             RandomAccessIterator middle = first + (beyond - first) / 2;
             if(middle - first > 50){
-                mergesort(first, middle, less);
+                FWI::mergeSort(first, middle, less);
             } else {
-                insertionSort(first, beyond, less);
+                FWI::insertionSort(first, beyond, less);
             }
                     
             if(beyond - middle > 50){
-                mergesort(middle, beyond, less);
+                FWI::mergeSort(middle, beyond, less);
             } else {
-                insertionSort(middle, beyond, less);
+                FWI::insertionSort(middle, beyond, less);
             }
             std::inplace_merge(first, middle, beyond, less);
         }
+    }
+    
+    // sort the content from first until beyond with the provided less function
+    template <class RandomAccessIterator, class Less>
+    void sort(RandomAccessIterator first, RandomAccessIterator beyond, Less less ){
+        
+        if( !std::is_sorted(first, beyond) ){
+            
+            if( beyond - first > 50){
+                FWI::mergeSort(first, beyond, less);
+            } else {
+                FWI::insertionSort(first, beyond, less);
+            }
+        }
+    }
+    
+    // call the sorting function and return the result as an OutputIterator
+    template <class InputIterator, class OutputIterator, class Less>
+    OutputIterator sort(InputIterator first, InputIterator beyond, OutputIterator result, Less less ){
+        
+        typedef typename std::iterator_traits<InputIterator>::value_type ValueType;
+        
+        std::vector<ValueType> V;
+        
+        std::copy(first,beyond,std::back_inserter(V));
+        
+        FWI::sort(V.begin(), V.end(), less);
+        
+        return std::copy(V.begin(), V.end(), result);
     }
 }
 
